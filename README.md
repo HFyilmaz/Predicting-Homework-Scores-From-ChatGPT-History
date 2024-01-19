@@ -93,4 +93,14 @@ As a data imputation, we identified these student's grade and put the mean value
 Moreover, there was a student whose score could not be identified in the csv file given to us. Since we were unable to know the score, we simply omitted it from the overall dataset.
 
 
+![correlation](images/correlation.png)
+
 ## Chapter 5 - Modeling
+
+
+
+### 2- Using Ensemble Techniques - (Random Forest x Gradient Boosting
+
+
+
+![correlation](images/correlation.png)
