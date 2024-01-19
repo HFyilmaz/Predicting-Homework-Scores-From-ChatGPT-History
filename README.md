@@ -94,7 +94,17 @@ Moreover, there was a student whose score could not be identified in the csv fil
 
 ## Chapter 5 - Modeling
 
+### 1- Neural Networks
+To train the neural networks, a subset of features is selected based on their correlation value. The optimal correlation threshold for feature selection is determined to be ***0.15. Following this, the data is partitioned into two parts: a training set and a test set. A simple neural network is established with four layers (two of them being hidden layers). The predicted scores by the neural network are clipped between 0 and 100 to adhere to the constraints. Afterward, the mean squared error is calculated, resulting in a value of 209.90. The scatterplot below illustrates how our neural network model predicts the scores.
 
+
+![neural_networks](images/neural_networks.png)
 
 ### 2- Using Ensemble Techniques - (Random Forest x Gradient Boosting
+After getting high MSE values from the neural network, we decided to apply some other techniques. In this part, after eliminating the features that have below the certain correlation coefficient threshold, we apply necessary scalings by analyzing the distributions for each feature. For example, if a feature has skewed distribution, we applied robust scaler.
+After these changes, we started modeling by GradientBoosting alone. But still, the MSE are not so small, compared to our previous neural network model. Therefore, we decided to use ensembling in which we ensemble 2 different techniques which are GradientBoostingRegressor and RandomForestRegressor. Once we tuned the hyperparameters through GridSearchCV, we trained our regressors and ensembled them together.
+The result we got is way lower than what we got in NN. So, we decided on this model and made the necessary visualizations as below.
 
+
+![ensemble1](images/ensemble1.png)
+![ensemble2](images/ensemble2.png)
