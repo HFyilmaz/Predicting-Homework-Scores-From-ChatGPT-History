@@ -101,6 +101,3 @@ Moreover, there was a student whose score could not be identified in the csv fil
 
 ### 2- Using Ensemble Techniques - (Random Forest x Gradient Boosting
 
-
-
-![correlation](images/correlation.png)
