@@ -1,9 +1,8 @@
+# Machine Learning Course (CS412) Project
 
-# CS412 Course Project
+In this project, we developed a machine learning model to predict the scores obtained in the first homework in the course by looking at the chatgpt histories of the students.
 
-In this project, we developed a model to predict the scores obtained in the first homework in the course.
-
-## Chapter 1 - Looking at what we have in code2convos dictionary
+## Chapter 1 - Code2convos Dictionary: Dividing Text Bodies Into Parts 
 
 First thing we did was to divide the ChatGPT response into subtexts, which are text, code and commentCode. We believed that treating the responses as a whole would not serve our needs and also for deriving more features related the code examples provided by ChatGPT, this division helped a lot.
 
@@ -48,8 +47,6 @@ We observed that ChatGPT is mostly using only some bunch of words when the user 
 
 #### ***Below metrics are based on similarities
 
-
-
 ### Similarity between user prompts in a single file
 
 We used pre-defined Word2Vec model for text embeddings to answer the question of how similar the prompts are. This possesses great importance since the repeated prompts can be a good indicator of the fact that user is stuck at some point.
@@ -84,7 +81,7 @@ It is used as a measure of how much the student desires to see examples from Cha
 In our assumption, students are expected to make further clarification when they use parentheses. Therefore, we added the number of occurences of parentheses in prompts.
 
 
-## Chapter 4 - Finalizing the dataframe & Dealing with broken files
+## Chapter 4 - Finalizing The Dataframe & Dealing With Broken Files
 
 Once we finalized our dataframe by including the score data and our seperate prompt matching data with our base dataframe on which the feature engineering is done, we were ready to deal with the HTML files that give 404 error.
 
