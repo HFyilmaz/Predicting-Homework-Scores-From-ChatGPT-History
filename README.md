@@ -105,6 +105,16 @@ After getting high MSE values from the neural network, we decided to apply some 
 After these changes, we started modeling by GradientBoosting alone. But still, the MSE are not so small, compared to our previous neural network model. Therefore, we decided to use ensembling in which we ensemble 2 different techniques which are GradientBoostingRegressor and RandomForestRegressor. Once we tuned the hyperparameters through GridSearchCV, we trained our regressors and ensembled them together.
 The result we got is way lower than what we got in NN. So, we decided on this model and made the necessary visualizations as below.
 
+The performance is as follows (it is also in the notebook):
+Training Set Metrics for Ensemble Model:
+MSE Train: 79.41700094720589
+R2 Train: 0.510273170023596
+
+Test Set Metrics for Ensemble Model:
+MSE Test: 66.83764569262966
+MAE Test: 5.539456625904261
+R2 Test: 0.32601028554055755
+
 
 ![ensemble1](images/ensemble1.png)
 ![ensemble2](images/ensemble2.png)
