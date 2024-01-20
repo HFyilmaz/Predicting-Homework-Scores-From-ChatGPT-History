@@ -2,12 +2,20 @@
 
 In this project, we developed a machine learning model to predict the scores obtained in the first homework in the course by looking at the chatgpt histories of the students.
 
-## Chapter 1 - Code2convos Dictionary: Dividing Text Bodies Into Parts 
+## Table Of Contents
+### [1.Dictionary](#dictionary)
+### [2.Prompt Matching](#prompt)
+### [3.Feature Engineering](#features)
+### [4.Finalizing The Dataframe](#dataframe)
+### [5.Modeling](#models)
+
+
+## Chapter 1 - Code2convos Dictionary: Dividing Text Bodies Into Parts <a name="dictionary">
 
 First thing we did was to divide the ChatGPT response into subtexts, which are text, code and commentCode. We believed that treating the responses as a whole would not serve our needs and also for deriving more features related the code examples provided by ChatGPT, this division helped a lot.
 
 
-## Chapter 2 - Prompt Matching
+## Chapter 2 - Prompt Matching <a name="prompt">
 
 Initially, we omitted some parts in the questions such as points indicator for the corresponding question in order for our similarity calculations to work better.
 
@@ -30,9 +38,9 @@ Approach 2 : Among all prompts in a given HTML file, we take the average of the 
 This does not seem feasible since the ones that are not related to the given question, decrease the similarity value significantly for a given HTML file.
 
 
-## Chapter 3 - Feature Engineering
+## Chapter 3 - Feature Engineering <a name="features">
 
-#### ***We focused on the occurences of the words related to the below metrics.
+#### We focused on the occurences of the words related to the below metrics.
 
 ### Discomfort Metric
 We identify several words indicating that the user is not comfortable with the response given by ChatGPT. These words are from the language itself such as "not correct" and from the Python error list such as "ValueError". We put the number of occurences of these words as a feature.
@@ -45,7 +53,7 @@ We identify several words indicating that the user is comfortable with the respo
 We observed that ChatGPT is mostly using only some bunch of words when the user indicates their discomfort. These are words such as "apologize", "confusion". We put the number of occurences of these words as a feature.
 
 
-#### ***Below metrics are based on similarities
+#### Below metrics are based on similarities
 
 ### Similarity between user prompts in a single file
 
@@ -60,7 +68,7 @@ Thanks to what we did at Chapter 1, we were able to focus on the similarities be
 This feature is added in order to measure how similar the student's work to the students who got 100 in their homework.
 We obtained the average feature vector from the ones getting 100 points in the homework and apply cosine similarity for each student's feature vector and put it as a new metric
 
-#### *** Metrics related to how detailed the work is.
+#### Metrics related to how detailed the work is.
 
 ### Average word count for user prompts and responses
 
@@ -81,7 +89,7 @@ It is used as a measure of how much the student desires to see examples from Cha
 In our assumption, students are expected to make further clarification when they use parentheses. Therefore, we added the number of occurences of parentheses in prompts.
 
 
-## Chapter 4 - Finalizing The Dataframe & Dealing With Broken Files
+## Chapter 4 - Finalizing The Dataframe & Dealing With Broken Files <a name="dataframe">
 
 Once we finalized our dataframe by including the score data and our seperate prompt matching data with our base dataframe on which the feature engineering is done, we were ready to deal with the HTML files that give 404 error.
 
@@ -92,10 +100,10 @@ Moreover, there was a student whose score could not be identified in the csv fil
 
 ![correlation](images/correlation.png)
 
-## Chapter 5 - Modeling
+## Chapter 5 - Modeling <a name="models">
 
 ### 1- Neural Networks
-To train the neural networks, a subset of features is selected based on their correlation value. The optimal correlation threshold for feature selection is determined to be ***0.15. Following this, the data is partitioned into two parts: a training set and a test set. A simple neural network is established with four layers (two of them being hidden layers). The predicted scores by the neural network are clipped between 0 and 100 to adhere to the constraints. Afterward, the mean squared error is calculated, resulting in a value of 209.90. The scatterplot below illustrates how our neural network model predicts the scores.
+To train the neural networks, a subset of features is selected based on their correlation value. The optimal correlation threshold for feature selection is determined to be 0.15. Following this, the data is partitioned into two parts: a training set and a test set. A simple neural network is established with four layers (two of them being hidden layers). The predicted scores by the neural network are clipped between 0 and 100 to adhere to the constraints. Afterward, the mean squared error is calculated, resulting in a value of 209.90. The scatterplot below illustrates how our neural network model predicts the scores.
 
 
 ![neural_networks](images/neural_networks.png)
@@ -110,13 +118,13 @@ The performance is as follows (it is also in the notebook):
 
 
 #### Training Set Metrics for Ensemble Model:
-MSE Train: 79.41700094720589
-R2 Train: 0.510273170023596
+MSE Train: 79.41
+R2 Train: 0.51
 
 #### Test Set Metrics for Ensemble Model:
-MSE Test: 66.83764569262966
-MAE Test: 5.539456625904261
-R2 Test: 0.32601028554055755
+MSE Test: 66.83
+MAE Test: 5.53
+R2 Test: 0.32
 
 
 ![ensemble1](images/ensemble1.png)
