@@ -3,11 +3,11 @@
 In this project, we developed a machine learning model to predict the scores obtained in the first homework in the course by looking at the chatgpt histories of the students.
 
 ## Table Of Contents
-+ ### [1.Dictionary](#dictionary)
-+ ### [2.Prompt Matching](#prompt)
-+ ### [3.Feature Engineering](#features)
-- ### [4.Finalizing The Dataframe](#dataframe)
-- ### [5.Modeling](#models)
++ #### [1. Dictionary](#dictionary)
++ #### [2. Prompt Matching](#prompt)
++ #### [3. Feature Engineering](#features)
++ #### [4. Finalizing The Dataframe](#dataframe)
++ #### [5. Modeling](#models)
 
 
 ## Chapter 1 - Code2convos Dictionary: Dividing Text Bodies Into Parts <a name="dictionary">
