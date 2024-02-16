@@ -8,7 +8,7 @@ In this project, we developed a machine learning model to predict the scores obt
 + ### [3. Feature Engineering](#features)
 + ### [4. Finalizing The Dataframe](#dataframe)
 + ### [5. Modeling](#models)
-
++ ### [6. Conclusion/Comments] (#conclusion)
 
 ## Chapter 1 - Code2convos Dictionary: Dividing Text Bodies Into Parts <a name="dictionary">
 
@@ -129,3 +129,8 @@ R2 Test: 0.32
 
 ![ensemble1](images/ensemble1.png)
 ![ensemble2](images/ensemble2.png)
+
+
+## Chapter 6 - Conclusion / Comments <a name="conclusion">
+
+The project aimed to develop a model for making highly accurate predictions. Our model significantly outperformed the other proposed models. However, despite being selected as one of the top models in the course, its accuracy falls short of establishing a strong correlation between students' ChatGPT histories and their grades, as evident from the results above. Therefore, further work and data collection are necessary to reach a more conclusive understanding. With the limited dataset available, the best model we constructed failed to yield sufficient insights.
