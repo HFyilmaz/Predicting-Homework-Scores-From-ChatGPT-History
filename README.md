@@ -8,7 +8,7 @@ In this project, we developed a machine learning model to predict the scores obt
 + ### [3. Feature Engineering](#features)
 + ### [4. Finalizing The Dataframe](#dataframe)
 + ### [5. Modeling](#models)
-+ ### [6. Conclusion/Comments] (#conclusion)
++ ### [6. Conclusion/Comments](#conclusion)
 
 ## Chapter 1 - Code2convos Dictionary: Dividing Text Bodies Into Parts <a name="dictionary">
 
